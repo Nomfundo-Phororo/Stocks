@@ -1,0 +1,51 @@
+<div id="search-wrapper">
+    <input id="searchQuery" placeholder="Search stock here..." (input)="search($event)" class="form__field" />
+
+</div>
+
+<div class="wrapper">
+    <table class="table">
+        <thead class="tr">
+            <th scope="col" class="th" sortable="stock" (sort)="onSort($event)">Stock</th>
+            <th scope="col" class="th" sortable="industry" (sort)="onSort($event)">Industry</th>
+            <th scope="col" class="th" sortable="sector" (sort)="onSort($event)">Sector</th>
+            <th scope="col" class="th" sortable="currency_code" (sort)="onSort($event)">Currency Code</th>
+
+        </thead>
+
+        <tbody class="tr">
+            <tr *ngFor="let stock_item of stock" (click)="selectHandler(stock_item)">
+                <!-- <td class="td">{{ stock_item.id }}</td>  -->
+                <td class="td">{{ stock_item.stock }}</td>
+                <td class="td">{{ stock_item.industry }}</td>
+                <td class="td">{{ stock_item.sector }}</td>
+                <td class="td">{{ stock_item.currency_code }}</td>
+            </tr>
+
+                <tr *ngIf="searchMessage!=''" class="errorwrapper"><p>{{searchMessage}}</p>
+                </tr>
+        </tbody>
+    </table>
+</div>
+<ng-template [ngIf]="stockHeading!=''">
+    <h2 class="stockHeading">{{stockHeading}}</h2>
+    <div class="wrapper">
+        <table class="table">
+
+            <thead class="tr">
+                <th class="th" scope="col" >Stock</th>
+                <th class="th" scope="col" sortable2="date" (sortT2)="sortData($event)">Date</th>
+                <th class="th" scope="col" sortable2="value" (sortT2)="sortData($event)">Value</th>
+            </thead>
+            <tr *ngFor="let stock of selectedStockValues" class="tr">
+                <td class="td">{{ stockHeading }}</td>
+                <td class="td">{{ stock.date }}</td>
+                <td class="td">{{ stock.value }}</td>
+            </tr>
+
+        </table>
+    </div>
+    <button class="button export-btn" (click)="exportAsJson()">
+        Export as a Json
+    </button>
+</ng-template>
