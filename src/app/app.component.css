@@ -14,8 +14,7 @@
   right: 0;
   height: 60px;
   display: flex;
-
-  background-color: rgb(174 201 198);
+  background-image: linear-gradient(to left, #c9e0e5e8, #3a7572);
   box-shadow: 0px 6px 15px #9f9f9f;
  border-style:solid;
  border-width: 1px;
@@ -53,48 +52,7 @@ svg.material-icons:not(:last-child) {
 }
 
 
-.card-container .card:not(:last-child) {
-  margin-right: 0;
-}
 
-.card.card-small {
-  height: 16px;
-  width: 168px;
-}
-
-.card-container .card:not(.highlight-card) {
-  cursor: pointer;
-}
-
-.card-container .card:not(.highlight-card):hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
-}
-
-.card-container .card:not(.highlight-card):hover .material-icons path {
-  fill: rgb(105, 103, 103);
-}
-
-.card.highlight-card {
-  background-color: #1976d2;
-  color: white;
-  font-weight: 600;
-  border: none;
-  width: auto;
-  min-width: 30%;
-  position: relative;
-}
-
-.card.card.highlight-card span {
-  margin-left: 60px;
-}
-
-svg#rocket {
-  width: 80px;
-  position: absolute;
-  left: -10px;
-  top: -24px;
-}
 
 
 a,
