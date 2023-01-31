@@ -38,7 +38,7 @@
                 <th class="th" scope="col" sortable2="value" (sortT2)="sortData($event)">Value</th>
             </thead>
             <tr *ngFor="let stock of selectedStockValues" class="tr">
-                <td class="td">{{ stockHeading }}</td>
+                <td class="td stock-data-column">{{ stockHeading }}</td>
                 <td class="td">{{ stock.date }}</td>
                 <td class="td">{{ stock.value }}</td>
             </tr>

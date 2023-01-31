@@ -338,3 +338,9 @@ th[sortable2].asc::before {
   animation: blink 12s infinite;
   -webkit-animation: blink 12s infinite;
 }
+.stock-data-column{
+  text-transform: lowercase;
+}
+.stock-data-column::first-letter{
+  text-transform: capitalize;
+}
